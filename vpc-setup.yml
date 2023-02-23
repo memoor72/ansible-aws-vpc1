@@ -105,12 +105,8 @@
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
         tags:
-           Name: Vprofile-PubRT
-      subnets:
-        - "{{pubsub1_out.subnet.id}}"
-        - "{{pubsub2_out.subnet.id}}"
-        - "{{pubsub3_out.subnet.id}}"
+          Name: Vprofile-PubRT
       routes:
-        - dest: 0.0.0.0/0
-          gateway_id: "{{igw_out.gateway_id}}"
+      - dest: 0.0.0.0/0
+        gateway_id: "{{igw_out.gateway_id}}"
       register: pubRT_out
