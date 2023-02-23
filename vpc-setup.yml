@@ -88,7 +88,7 @@
         cidr: "{{PrivSub3Cidr}}"
         map_public: yes
         resource_tags:
-           Name: vprofile-privsub2
+           Name: vprofile-privsub3
       register: privsub3_out
     
     - name: create Internet Gateway Setup 
