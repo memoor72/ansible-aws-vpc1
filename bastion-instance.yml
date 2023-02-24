@@ -14,14 +14,14 @@
       ec2_key:
         name: vprofile-key
         region: "{{region}}"
-      register: vprofile-key_out
+      register: key_out
 
     - name: Save private key into file bastion-key.pem
       copy:
-        content: "{{vprofile-key_out.key.private_key}}"
+        content: "{{key_output.key.private_key}}"
         dest: "./bastion-key.pem"
         mode: 0600
-      when: vprofile-key_out.changed
+      when: key_out.changed
 
     - name: Create Sec Grp for bastion host 
       ec2_group: 
