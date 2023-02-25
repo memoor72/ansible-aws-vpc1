@@ -78,8 +78,7 @@
           Name: "web01"
           Project: Vprofile
           Owner: DevOps Team
-        exact_count: 1
-        count:
+        count: 
           Name: "web01"
           Project: Vprofile
           Owner: DevOps Team
