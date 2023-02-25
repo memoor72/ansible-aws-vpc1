@@ -4,7 +4,7 @@
     - name: Create web01 instance
       ec2_instance:
         key_name: vprokey
-        region: "{{ region }}"
+        region: us-east-2
         instance_type: t2.micro
         image:
           ami: ami-0568936c8d2b91c4e
