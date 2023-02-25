@@ -53,4 +53,4 @@
             from_port: 22
             to_port: 22
             group_id: "{{BastionSGid}}"
-      register: vproStackSG_out
+      register: vproStackSG_out        rules 
