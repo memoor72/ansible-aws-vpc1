@@ -1,5 +1,5 @@
-- name: My Playbook
-  hosts: all
+- name: Setup Vprofile Stack
+  hosts: localhost
   tasks:
     - name: Create web01 instance
       ec2_instance:
