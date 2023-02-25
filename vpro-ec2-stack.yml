@@ -78,8 +78,8 @@
           Name: "web01"
           Project: Vprofile
           Owner: DevOps Team
-        exact_count: 1
-        groups: "{{vproStackSG_out.group_id}}"
+        count: 1
+        group_id: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: web01_out 
 
