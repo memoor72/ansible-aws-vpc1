@@ -1,5 +1,5 @@
 - name: Create web01 instance
-  ec2_instance:
+  amazon.aws.ec2_instance:
     key_name: vprokey
     region: "{{ region }}"
     instance_type: t2.micro
