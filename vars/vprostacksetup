@@ -1,5 +1,7 @@
-image_id: ami-0568936c8d2b91c4e
-tomcat_ami: ami-0568936c8d2b91c4e
-memcache_ami: ami-0568936c8d2b91c4e
-rmq_ami: ami-0568936c8d2b91c4e
-mysql_ami: ami-0568936c8d2b91c4e
+nginx_ami: ami-07efac79022b86107
+tomcat_ami: ami-07efac79022b86107
+memcache_ami: ami-07efac79022b86107
+rmq_ami: ami-07efac79022b86107
+mysql_ami: ami-07efac79022b86107
+
+
