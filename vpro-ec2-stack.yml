@@ -72,7 +72,7 @@
           region: "{{region}}"
           instance_type: t2.micro
           image: 
-            ami: "ami-0568936c8d2b91c4e"
+            ami: ami-0568936c8d2b91c4e
           wait: yes
           wait_timeout: 300
           instance_tags:
