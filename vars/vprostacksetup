@@ -1,4 +1,4 @@
-image_id: "ami-0568936c8d2b91c4e"
+image_id: ami-0568936c8d2b91c4e
 tomcat_ami: ami-0568936c8d2b91c4e
 memcache_ami: ami-0568936c8d2b91c4e
 rmq_ami: ami-0568936c8d2b91c4e
