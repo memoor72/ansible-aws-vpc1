@@ -147,4 +147,4 @@
       register: db01_out
 
     - debug:
-        var: web01_out
+        var: web01_out.instances[0].instance_id
