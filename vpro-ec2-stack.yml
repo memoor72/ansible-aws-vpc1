@@ -149,23 +149,23 @@
     - debug:
         var: db01_out.tagged_instances[0].id
     
-    - amazon.aws.elb_classic_lb:
+    - local_action:
+        module: ec2_elb_lb
         name: "vprofile-elb"
         region: "{{region}}"
-        scheme: internal
         state: present
         instance_ids:
-          - "{{web01_out.tagged_instances[0].id}}"
-      purge_instance_ids: true
-      security-group_ids: "{{vproELBSG_out.group_id}}"
-      subnets:
-       - "{{pubsub1id}}"
-       - "{{pubsub2id}}"
-       - "{{pubsub3id}}"
-      listeners:
-        - protocol: http # options are http, https, ssl, tcp
-          load_balancer_port: 80
-          instance_port: 80
+          - "{{ web01_out.tagged_instances[0].id }}"
+        purge_instance_ids: true
+        security_group_ids: "{{ vproELBSG_out.group_id }}"
+        subnets:
+          - "{{ pubsub1id }}"
+          - "{{ pubsub2id }}"
+          - "{{ pubsub3id }}"
+        listeners:
+          - protocol: http # options are http, https, ssl, tcp
+            load_balancer_port: 80
+            instance_port: 80
 
     - name: Insert/Update "Match User" configuration block in /etc/ssh/sshd_config
       ansible.builtin.blockinfile:
