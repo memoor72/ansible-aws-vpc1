@@ -167,8 +167,8 @@
             load_balancer_port: 80
             instance_port: 80
 
-    - name: Insert/Update "Match User" configuration block in /etc/ssh/sshd_config
-      ansible.builtin.blockinfile:
+    - name: Insert/Update Hosts IP & Name in file provision-stack/group_vars/hostsip
+      blockinfile:
         path: provision-stack/group_vars/hostsip
         block: |
          web01_ip: "{{web01_out.instances[0].instance_id.private
