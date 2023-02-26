@@ -147,7 +147,7 @@
       register: db01_out
 
     - debug:
-        var: db01_out.tagged_instances[0].id
+        var: db01_out.instances[0].instance_id
     
     - local_action:
         module: ec2_elb_lb
@@ -155,7 +155,7 @@
         region: "{{region}}"
         state: present
         instance_ids:
-          - "{{ web01_out.tags[0].id }}"
+          - "{{ web01_out.instances[0].instance_id }}"
         purge_instance_ids: true
         security_group_ids: "{{ vproELBSG_out.group_id }}"
         subnets:
@@ -171,15 +171,15 @@
       ansible.builtin.blockinfile:
         path: provision-stack/group_vars/hostsip
         block: |
-         web01_ip: "{{web01_out.tagged_instances[0].id.private
+         web01_ip: "{{web01_out.instances[0].instance_id.private
          -ip}}"
-         app01_ip "{{app01_out.tagged_instances[0].id.private
+         app01_ip "{{app01_out.instances[0].instance_id.private
          -ip}}"
-         rmq01_ip "{{rmq01_out.tagged_instances[0].id.private
+         rmq01_ip "{{rmq01_out.instances[0].instance_id.private
          -ip}}"
-         mc01_ip "{{mc01_out.tagged_instances[0].id.private
+         mc01_ip "{{mc01_out.instances[0].instance_id.private
          -ip}}"
-         db01_ip "{{db01_out.tagged_instances[0].id.private
+         db01_ip "{{db01_out.instances[0].instance_id.private
          -ip}}"
         
     - name: Copy login key to provision_stack directory 
@@ -192,15 +192,15 @@
       ansible.builtin.blockinfile:
         path: provision-stack/group_vars/hostsip
         block: |
-         web01 ansible_host="{{web01_out.tagged_instances[0].id.private
+         web01 ansible_host="{{web01_out.instances[0].instance_id.private
          -ip}}"
-         app01 ansible_host="{{app01_out.tagged_instances[0].id.private
+         app01 ansible_host="{{app01_out.instances[0].instance_id.private
          -ip}}"
-         rmq01 ansible_host="{{rmq01_out.tagged_instances[0].id.private
+         rmq01 ansible_host="{{rmq01_out.instances[0].instance_id.private
          -ip}}"
-         mc01 ansible_host="{{mc01_out.tagged_instances[0].id.private
+         mc01 ansible_host="{{mc01_out.instances[0].instance_id.private
          -ip}}"
-         db01 ansible_host="{{db01_out.tagged_instances[0].id.private
+         db01 ansible_host="{{db01_out.instances[0].instance_id.private
          -ip}}"
          cntl ansible_host-127.0.0.1 ansible_connection=local 
 
